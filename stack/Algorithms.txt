@@ -1,0 +1,17 @@
+Algorithm for push operation:
+1. If stack is full then display stack is full. If stack is not full then go to step 2.
+2. Increment top by 1.
+3. Set stack[top] = item.
+4. Exit.
+
+Algorithm for pop operation:
+1. If stack is empty then display stack is empty. If stack is not empty then go to step 2.
+2. Set item = stack[top].
+3. Decrement top by 1.
+4. Exit.
+
+Algorithm for display operation:
+1. If stack is empty then display stack is empty. If stack is not empty then go to step 2.
+2. Repeat step 3 and 4 for i = top to 0.
+3. Display stack[i].
+4. Exit.

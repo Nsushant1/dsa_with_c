@@ -1,0 +1,39 @@
+-------------------INSERTION IN A LINKED LIST-------------
+
+a. Insert at the begiining
+
+-> Start
+-> Create a new node
+-> Check if the list is empty
+-> If the list is empty, then make the new node as head
+-> If the list is not empty, then make the next of new node as head
+-> Move the head to point to the new node
+-> Return the head
+-> Stop
+
+
+b.Insert at the end
+
+-> Start
+-> Create a new node
+-> Check if the list is empty
+-> If the list is empty, then make the new node as head
+-> If the list is not empty, then traverse the list till the last node
+-> Make the next of last node as new node
+-> Return the head
+-> Stop
+
+
+c. Insert at the middle
+
+-> Start
+-> Create a new node
+-> Check if the list is empty
+-> If the list is empty, then make the new node as head
+-> If the list is not empty, then traverse the list till the middle node
+-> Make the next of new node as the next of middle node
+-> Make the next of middle node as new node
+-> Return the head
+-> Stop
+
+
