@@ -1,0 +1,105 @@
+# Stack Data Structure in C
+
+## 1. Introduction to Stack
+A **Stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle.
+ The last element added is the first one to be removed.
+
+### **Basic Stack Operations**
+1. **Push** – Insert an element into the stack.
+2. **Pop** – Remove the top element from the stack.
+3. **Peek (Top)** – Retrieve the top element without removing it.
+4. **isEmpty** – Check if the stack is empty.
+5. **isFull** – Check if the stack is full (for array implementation).
+
+---
+
+## 2. Stack Implementation Using Array
+
+### **Algorithm**
+#### **Push Operation**
+1. Check if the stack is full (top == MAX - 1).
+2. If full, print "Stack Overflow" and return.
+3. Increment `top`.
+4. Insert the element at `stack[top]`.
+
+#### **Pop Operation**
+1. Check if the stack is empty (top == -1).
+2. If empty, print "Stack Underflow" and return -1.
+3. Return `stack[top]` and decrement `top`.
+
+#### **Peek Operation**
+1. If stack is empty, return "Stack is Empty".
+2. Otherwise, return `stack[top]`.
+
+---
+
+## 3. C Implementation of Stack Using Array
+```c
+#include <stdio.h>
+#define MAX 100
+
+typedef struct {
+    int top;
+    int arr[MAX];
+} Stack;
+
+void init(Stack *s) { s->top = -1; }
+int isEmpty(Stack *s) { return s->top == -1; }
+int isFull(Stack *s) { return s->top == MAX - 1; }
+
+void push(Stack *s, int x) {
+    if (isFull(s)) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    s->arr[++(s->top)] = x;
+}
+
+int pop(Stack *s) {
+    if (isEmpty(s)) {
+        printf("Stack Underflow\n");
+        return -1;
+    }
+    return s->arr[(s->top)--];
+}
+
+int peek(Stack *s) {
+    return isEmpty(s) ? -1 : s->arr[s->top];
+}
+
+int main() {
+    Stack s;
+    init(&s);
+    push(&s, 10);
+    push(&s, 20);
+    printf("Top: %d\n", peek(&s));
+    pop(&s);
+    printf("Top after pop: %d\n", peek(&s));
+    return 0;
+}
+```
+
+---
+
+## 4. Stack Applications
+1. **Function Calls (Recursion)** – The call stack stores function calls.
+2. **Undo/Redo Operations** – Used in text editors.
+3. **Expression Evaluation** – Used in converting and evaluating expressions.
+4. **Backtracking Algorithms** – Used in DFS, Maze Solving, etc.
+5. **Balanced Parentheses Checking** – Checks if brackets are balanced.
+
+---
+
+## 5. Additional Problems to Practice
+✔ **Implement Stack using Array** (✔ Done above)
+✔ **Check for Balanced Parentheses** (Leetcode #20)
+✔ **Next Greater Element** (Leetcode #496)
+✔ **Stock Span Problem** (GFG)
+✔ **Largest Rectangle in Histogram** (Leetcode #84)
+
+---
+
+This document provides a complete guide on **Stacks using Arrays** in **C**.
+
+📌 Next topics: **Stack using Linked List, Stack Applications** 🚀
+
